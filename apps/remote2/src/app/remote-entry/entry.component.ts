@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 @Component({
-  imports: [CommonModule],
-  selector: 'app-remote2-entry',
-  template: `Remote 2 Component`,
+  imports: [CommonModule, RouterModule],
+  selector: `app-remote2-entry`,
+  template: `Navigation
+    <router-outlet></router-outlet>
+  `,
 })
 export class RemoteEntryComponent {}
