@@ -2,7 +2,9 @@
   "name": "@platform/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "npx nx run platform:serve"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.0.0",
