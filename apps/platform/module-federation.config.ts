@@ -1,4 +1,4 @@
-import { ModuleFederationConfig } from '@nx/module-federation';
+import {ModuleFederationConfig} from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
   name: 'platform',
@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['remote'],
+  remotes: ['remote', ['external', "http://localhost:4202/remoteEntry.js"]],
 };
 
 /**
