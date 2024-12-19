@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
-import { RemoteEntryComponent } from './entry.component';
-import { TestComponent } from './test.component';
+import {TestComponent} from './test.component';
+import {HomeComponent} from './home.component';
 
 export const remoteRoutes: Route[] = [
-  {path: '', component: RemoteEntryComponent},
+  {path: '', component: HomeComponent},
   {path: 'test', component: TestComponent},
 ];
