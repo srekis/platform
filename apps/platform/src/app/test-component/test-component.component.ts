@@ -1,6 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {Component, OnInit} from '@angular/core';
-import {loadRemote} from '@module-federation/enhanced/runtime';
+import {Component} from '@angular/core';
 import {RemoteEntryComponent} from '@platform/remote';
 
 @Component({
@@ -9,10 +8,6 @@ import {RemoteEntryComponent} from '@platform/remote';
   templateUrl: './test-component.component.html',
   styleUrl: './test-component.component.scss',
 })
-export class TestComponentComponent implements OnInit {
+export class TestComponentComponent {
   public campaignId = '3';
-
-  async loadExternalComponent() {
-    loadRemote<typeof import('external')>('my-remote-app/Module').then(m => m.RemoteEntryModule);
-  }
 }
