@@ -1,11 +1,13 @@
 import {CommonModule} from '@angular/common';
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   imports: [CommonModule],
   selector: 'app-remote-entry',
-  template: `test REMOTE {{campaignId}}`,
+  templateUrl: './entry.component.html',
 })
 export class RemoteEntryComponent {
-  @Input() public campaignId = '2';
+  @Input({required: true}) public campaignId!: string;
+
+  @Output() public buttonClicked = new EventEmitter<void>();
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   imports: [CommonModule],
-  selector: 'app-home-component',
-  template: `Home component from remote 2 MFE`,
+  selector: 'app-test-component',
+  templateUrl: './test.component.html',
 })
-export class HomeComponent {}
+export class TestComponent {}

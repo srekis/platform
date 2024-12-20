@@ -5,11 +5,14 @@ import {RemoteWrapperComponent} from '../remote-wrapper/remote-wrapper.component
 import {TestWrapperComponent} from '../test-wrapper/test-wrapper.component';
 
 @Component({
-  selector: 'app-test-component',
+  selector: 'app-home-component',
   imports: [CommonModule, RemoteEntryComponent, RemoteWrapperComponent, TestWrapperComponent],
-  templateUrl: './test-component.component.html',
-  styleUrl: './test-component.component.scss',
+  templateUrl: './home.component.html',
 })
-export class TestComponentComponent {
-  public campaignId = '3';
+export class HomeComponent {
+  protected campaignId = '3';
+
+  protected onButtonClicked(): void {
+    console.log('Button clicked');
+  }
 }
