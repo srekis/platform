@@ -12,7 +12,7 @@ export class RemoteEntryComponent {
 
   public constructor() {
     effect(() => {
-      console.log('campaignId from platform (host app)', this.campaignId());
+      console.log('Remote2 app: campaignId from platform (host app)', this.campaignId());
     });
   }
 }

@@ -11,27 +11,31 @@ import { CounterComponent } from "../counter/counter.component";
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  protected campaignId = signal('1');
-  protected count = signal(0);
   private products = signal([
     { name: 'Product A', price: 10 },
     { name: 'Product B', price: 15 },
     { name: 'Product C', price: 20 },
   ]);
+  
+  protected campaignId = signal('1');
+  protected count = signal(0);
   protected totalValue = computed(() =>
     this.products().reduce((sum, product) => sum + product.price, 0)
   );
 
   protected onButtonClicked(): void {
     console.log('onButtonClicked');
-    this.count.update(count => count + 1);
     this.products.update(products => [...products, { name: `Product ${this.generateRandomId()}`, price: 25 }]);
+  }
+
+  protected onIncrementCounter(): void {
+    this.count.update(count => count + 1);
 
     const doubleCount: Signal<number> = computed(() => this.count() * 2);
     console.log(doubleCount());
   }
 
-  protected onButtonClicked2(): void {
+  protected onCampaignIdChanged(): void {
     this.campaignId.set(this.generateRandomId());
   }
 
