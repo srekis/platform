@@ -23,6 +23,7 @@ export class HomeComponent {
   );
 
   protected onButtonClicked(): void {
+    console.log('onButtonClicked');
     this.count.update(count => count + 1);
     this.products.update(products => [...products, { name: `Product ${this.generateRandomId()}`, price: 25 }]);
 

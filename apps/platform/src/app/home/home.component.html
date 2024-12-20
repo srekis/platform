@@ -2,9 +2,8 @@
 
 <div style="display: flex; flex-direction: column; gap: 16px;">
   <app-remote-entry [campaignId]="campaignId()" (buttonClicked)="onButtonClicked()" />
-  <app-remote-entry [campaignId]="campaignId()" (buttonClicked)="onButtonClicked2()" />
   
-  <app-remote-wrapper />
+  <app-remote-wrapper [campaignId]="campaignId" />
   
   <app-test-wrapper />
 

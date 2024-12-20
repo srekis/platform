@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, WritableSignal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
 
@@ -7,4 +7,12 @@ import {RouterModule} from '@angular/router';
   selector: `app-remote2-entry`,
   templateUrl: './entry.component.html',
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  @Input({required: true}) public campaignId!: WritableSignal<string>;
+
+  public constructor() {
+    effect(() => {
+      console.log('campaignId from platform (host app)', this.campaignId());
+    });
+  }
+}

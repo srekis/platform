@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild, Input, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-remote-wrapper',
   template: `<ng-container #microFrontendRef />`
 })
 export class RemoteWrapperComponent implements OnInit {
+  @Input({required: true}) public campaignId!: WritableSignal<string>;
+
   @ViewChild('microFrontendRef', { read: ViewContainerRef })
   microFrontendRef!: ViewContainerRef;
   
@@ -15,7 +17,8 @@ export class RemoteWrapperComponent implements OnInit {
   private async loadMicroFrontend(): Promise<void> {
     try {
       const { RemoteEntryComponent } = await import('remote2/RemoteEntryComponent');
-      this.microFrontendRef.createComponent(RemoteEntryComponent);
+      const componentRef = this.microFrontendRef.createComponent(RemoteEntryComponent);
+      componentRef.setInput('campaignId', this.campaignId);
     } catch (error) {
       console.error('Error loading remote2 micro-frontend:', error);
     }
