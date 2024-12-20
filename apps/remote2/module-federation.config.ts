@@ -3,6 +3,7 @@ import { ModuleFederationConfig } from '@nx/module-federation';
 const config: ModuleFederationConfig = {
   name: 'remote2',
   exposes: {
+    './RemoteRoutingModule': 'apps/remote2/src/app/remote.routing.module.ts',
     './RemoteEntryComponent': 'apps/remote2/src/app/remote-entry/entry.component.ts',
     './TestComponent': 'apps/remote2/src/app/test/test.component.ts',
   },
