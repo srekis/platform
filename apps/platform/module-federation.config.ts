@@ -16,8 +16,6 @@ const config: ModuleFederationConfig = {
    */
   remotes: [
     'remote',
-    // 'remote2',
-    ['remote2', 'http://localhost:4203/remote2']
   ],
 };
 
