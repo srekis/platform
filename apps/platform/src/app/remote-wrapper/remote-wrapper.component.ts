@@ -3,7 +3,7 @@ import {loadRemoteModule} from '@angular-architects/module-federation';
 
 @Component({
   selector: 'app-remote-wrapper',
-  template: `<ng-container #microFrontendRef />
+  template: `<div>{{ componentName }}</div><ng-container #microFrontendRef />
   @if(elementFetchingFailed){
     <div class="error">
       Remote Element <strong> {{ componentName }} </strong> can not be displayed
@@ -13,12 +13,13 @@ import {loadRemoteModule} from '@angular-architects/module-federation';
 })
 export class RemoteWrapperComponent implements OnInit {
   @Input({required: true}) public campaignId!: WritableSignal<string>;
+  @Input({required: true}) public componentName!:string;
 
   @ViewChild('microFrontendRef', { read: ViewContainerRef })
   microFrontendRef!: ViewContainerRef;
 
   protected elementFetchingFailed = false;
-  protected componentName = 'RemoteEntryComponent';
+
 
   public async ngOnInit() {
     await this.loadMicroFrontend();

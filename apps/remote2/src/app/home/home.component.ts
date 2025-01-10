@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,4 +6,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-home-component',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  @Output() public buttonClicked = new EventEmitter<void>();
+}

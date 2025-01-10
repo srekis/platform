@@ -2,19 +2,18 @@
 
 <div style="display: flex; flex-direction: column; gap: 16px;">
   <app-remote-entry [campaignId]="campaignId()" (buttonClicked)="onButtonClicked()" />
-  
+
   <p>Total value: {{ totalValue() }}</p>
-  
-  <app-remote-wrapper [campaignId]="campaignId" />
-  
-  <app-test-wrapper />
+
+  <app-remote-wrapper [campaignId]="campaignId" [componentName]="'RemoteEntryComponent'"/>
+  <app-remote-wrapper [campaignId]="campaignId" [componentName]="'OtherComponent'"/>
 
   <app-counter-component [count]="count" [campaignId]="campaignId" />
 
   <div>
     <button (click)="onIncrementCounter()">Increment counter</button>
   </div>
-  
+
   <div>
     <button (click)="onCampaignIdChanged()" style="display: block;">Change campaign ID</button>
   </div>
