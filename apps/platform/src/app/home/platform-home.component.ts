@@ -6,11 +6,11 @@ import {TestWrapperComponent} from '../test-wrapper/test-wrapper.component';
 import { CounterComponent } from "../counter/counter.component";
 
 @Component({
-  selector: 'app-home-component',
+  selector: 'app-platform-home-component',
   imports: [CommonModule, RemoteEntryComponent, RemoteWrapperComponent, TestWrapperComponent, CounterComponent],
-  templateUrl: './home.component.html',
+  templateUrl: './platform-home.component.html',
 })
-export class HomeComponent {
+export class PlatformHomeComponent {
   private products = signal([
     { name: 'Product A', price: 10 },
     { name: 'Product B', price: 15 },
