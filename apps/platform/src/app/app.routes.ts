@@ -6,13 +6,13 @@ import { InventoryComponentWrapper } from './domains/inventory/inventory-wrapper
 export const appRoutes: Route[] = [
   {
     path: '',
-    children: [
-      {
-        path: 'remote2',
-        loadChildren: () =>
-          import('remote2/RemoteRoutingModule').then((m) => m.RemoteRoutingModule),
-      },
-    ],
+    // children: [
+    //   {
+    //     path: 'remote2',
+    //     loadChildren: () =>
+    //       import('remote2/RemoteRoutingModule').then((m) => m.RemoteRoutingModule),
+    //   },
+    // ],
     component: HomeComponent,
   },
   {
