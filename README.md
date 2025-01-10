@@ -105,4 +105,5 @@ And join the Nx community:
 # TODO
 - navigace v ramci remote micro-frontendu
 - komunikace v ramci remote micro-frontendu mezi komponentami bez pouziti platformy
-- zajistit, ze pokud nejede mikrofrontend, platforma se nezastavi
+- zajistit, ze pokud nejede mikrofrontend, platforma se nezastavi ✅
+
