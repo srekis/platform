@@ -5,8 +5,14 @@
     "types": [],
     "target": "ES2020"
   },
-  "files": ["src/main.ts", "src/app/remote-entry/entry.routes.ts", "src/app/remote.routing.module.ts"],
-  "include": ["src/**/*.d.ts"],
+  "files": [
+    "src/main.ts",
+    "src/app/remote-entry/entry.routes.ts",
+    "src/app/remote.routing.module.ts",
+    "src/app/domains/inventory/inventory-entry.component.ts",
+    "src/app/domains/targeting/targeting-entry.component.ts",
+  ],
+  "include": ["src/app/**/*remote.routing.module.ts", "src/**/*.d.ts"],
   "exclude": [
     "jest.config.ts",
     "src/**/*.test.ts",
