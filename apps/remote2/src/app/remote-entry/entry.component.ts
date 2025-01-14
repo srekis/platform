@@ -3,12 +3,11 @@ import {
   Input,
   WritableSignal,
   effect,
-  ViewChild,
   Output,
   EventEmitter,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { Service } from '../service';
 
 @Component({
@@ -19,8 +18,6 @@ import { Service } from '../service';
 export class RemoteEntryComponent {
   @Input({ required: true }) public campaignId!: WritableSignal<string>;
   @Output() public buttonClicked = new EventEmitter<void>();
-
-  @ViewChild('outlet') outlet!: RouterOutlet;
 
   public constructor(private service: Service) {
     effect(() => {
