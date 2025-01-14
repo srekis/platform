@@ -8,16 +8,11 @@ import { AppStateInterface } from '../store/reducer';
 import { SetCount } from '../store/action';
 
 @Component({
-  selector: 'app-home-component',
-  imports: [
-    CommonModule,
-    RemoteEntryComponent,
-    RemoteWrapperComponent,
-    CounterComponent,
-  ],
-  templateUrl: './home.component.html',
+  selector: 'app-platform-home-component',
+  imports: [CommonModule, RemoteEntryComponent, RemoteWrapperComponent, CounterComponent],
+  templateUrl: './platform-home.component.html',
 })
-export class HomeComponent {
+export class PlatformHomeComponent {
   constructor(private store: Store<AppStateInterface>) {}
   private products = signal([
     { name: 'Product A', price: 10 },

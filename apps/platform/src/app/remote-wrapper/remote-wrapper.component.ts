@@ -20,7 +20,6 @@ export class RemoteWrapperComponent implements OnInit {
 
   protected elementFetchingFailed = false;
 
-
   public async ngOnInit() {
     await this.loadMicroFrontend();
   }

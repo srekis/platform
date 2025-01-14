@@ -7,6 +7,10 @@ const config: ModuleFederationConfig = {
     './RemoteEntryComponent': 'apps/remote2/src/app/remote-entry/entry.component.ts',
     './OtherComponent': 'apps/remote2/src/app/other-component/other.component.ts',
     './TestComponent': 'apps/remote2/src/app/test/test.component.ts',
+    './InventoryRemoteRoutingModule': 'apps/remote2/src/app/domains/inventory/inventory-remote.routing.module.ts',
+    './InventoryEntryComponent': 'apps/remote2/src/app/domains/inventory/inventory-entry.component.ts',
+    './TargetingRemoteRoutingModule': 'apps/remote2/src/app/domains/targeting/targeting-remote.routing.module.ts',
+    './TargetingEntryComponent': 'apps/remote2/src/app/domains/targeting/targeting-entry.component.ts',
   },
 };
 

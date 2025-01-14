@@ -4,13 +4,11 @@ import {
   WritableSignal,
   effect,
   ViewChild,
-  AfterViewInit,
   Output,
   EventEmitter,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
 import { Service } from '../service';
 
 @Component({
@@ -18,7 +16,7 @@ import { Service } from '../service';
   selector: `app-remote2-entry`,
   templateUrl: './entry.component.html',
 })
-export class RemoteEntryComponent implements AfterViewInit {
+export class RemoteEntryComponent {
   @Input({ required: true }) public campaignId!: WritableSignal<string>;
   @Output() public buttonClicked = new EventEmitter<void>();
 
@@ -33,20 +31,7 @@ export class RemoteEntryComponent implements AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-  //   console.log(this.outlet)
-  //   if (this.outlet && this.outlet.component && this.outlet.component instanceof HomeComponent) {
-  //     const childComponent = this.outlet.component;
-  //
-  //     childComponent.buttonClicked.subscribe(() => {
-  //       console.log('clicked')
-  //       this.service.increment();
-  //       this.buttonClicked.emit();
-  //     });
-  //   }
-  }
-
-  clickButton() {
+  protected clickButton() {
     this.buttonClicked.emit();
     this.service.increment();
   }
