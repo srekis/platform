@@ -21,7 +21,7 @@ export const appRoutes: Route[] = [
   }
 ];
 
-function getRemoteExposedModule(remoteEntry: string, exposedModule: string): any {
+function getRemoteExposedModule(remoteEntry: string, exposedModule: string) {
   return async () => {
     try {
       const module = await loadRemoteModule({
