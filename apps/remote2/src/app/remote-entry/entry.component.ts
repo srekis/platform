@@ -1,6 +1,15 @@
-import { Component, Input, WritableSignal, effect } from '@angular/core';
+import {
+  Component,
+  Input,
+  WritableSignal,
+  effect,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule} from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { Service } from '../service';
 
 @Component({
   imports: [CommonModule, RouterModule],
@@ -8,11 +17,22 @@ import {RouterModule} from '@angular/router';
   templateUrl: './entry.component.html',
 })
 export class RemoteEntryComponent {
-  @Input({required: true}) public campaignId!: WritableSignal<string>;
+  @Input({ required: true }) public campaignId!: WritableSignal<string>;
+  @Output() public buttonClicked = new EventEmitter<void>();
 
-  public constructor() {
+  @ViewChild('outlet') outlet!: RouterOutlet;
+
+  public constructor(private service: Service) {
     effect(() => {
-      console.log('Remote2 app: campaignId from platform (host app)', this.campaignId());
+      console.log(
+        'Remote2 app: campaignId from platform (host app)',
+        this.campaignId()
+      );
     });
+  }
+
+  protected clickButton() {
+    this.buttonClicked.emit();
+    this.service.increment();
   }
 }

@@ -5,6 +5,7 @@ const config: ModuleFederationConfig = {
   exposes: {
     './RemoteRoutingModule': 'apps/remote2/src/app/remote.routing.module.ts',
     './RemoteEntryComponent': 'apps/remote2/src/app/remote-entry/entry.component.ts',
+    './OtherComponent': 'apps/remote2/src/app/other-component/other.component.ts',
     './TestComponent': 'apps/remote2/src/app/test/test.component.ts',
     './InventoryRemoteRoutingModule': 'apps/remote2/src/app/domains/inventory/inventory-remote.routing.module.ts',
     './InventoryEntryComponent': 'apps/remote2/src/app/domains/inventory/inventory-entry.component.ts',
